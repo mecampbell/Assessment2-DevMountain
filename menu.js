@@ -32,7 +32,14 @@
 
 //CODE HERE
 
-
+const pizza = {
+    name: 'Cheese',
+    price: 10,
+    category: 'Entree',
+    popularity: 10,
+    rating: 3,
+    tags: ['Non-Vegan', 'Easy', 'Kids']
+};
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -44,6 +51,7 @@
 
 //CODE HERE
 
+console.log(pizza.popularity);
 
 /*
     Second, log the second tag in your pizza's
@@ -54,7 +62,8 @@
 
 //CODE HERE
 
-
+console.log(pizza.tags[1]);
+console.log(pizza['tags'][1]);
 /*
     Third, destructure the price off of the
     pizza object.
@@ -64,6 +73,8 @@
 
 //CODE HERE
 
+let {price} = pizza;
+console.log(price);
 
 /*
     Fourth, and last, destructure the category
@@ -74,6 +85,8 @@
 
 //CODE HERE
 
+let {category} = pizza;
+console.log(category);
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -89,7 +102,48 @@
 
 //CODE HERE
 
+// const foodArr = ['Apple Pie', 5, 'Dessert', 9, 4.5, ['Party', 'Shareable', 'Sweet']];
 
+const foodArr = [{
+    name: 'Burger',
+    price: 3,
+    category: 'Entree',
+    popularity: 10,
+    rating: 8,
+    tags: ['Filling', 'Yummy', 'Big']
+},
+{
+    name: 'Fries',
+    price: 1,
+    category: 'Side',
+    popularity: 10,
+    rating: 10,
+    tags: ['Vegetarian', 'Salty', 'Kids']
+},
+{
+    name: 'Milkshake',
+    price: 2,
+    category: 'Dessert',
+    popularity: 10,
+    rating: 10,
+    tags: ['Sweet', 'Yummy', 'Cold']
+},
+{
+    name: 'Drink',
+    price: 1,
+    category: 'Beverage',
+    popularity: 10,
+    rating: 7,
+    tags: ['Drink', 'Sweet', 'Cold']
+},
+{
+    name: 'Nuggets',
+    price: 3,
+    category: 'Entree',
+    popularity: 7,
+    rating: 5,
+    tags: ['Easy', 'Kids', 'Quick']
+}];
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -105,9 +159,15 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filter = (arr, tag, cb) => cb(arr.includes(tag));
 
-
+filter(foodArr, 'Filling', result => {
+    if(result) {
+        console.log(`${this.tag} is in the array`);
+    } else {
+        console.log(`${this.tag} is not in the array`);
+    }
+});
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -150,6 +210,16 @@
 
 //CODE HERE
 
+const filterByProperty = (property, number, type) => {
+    this.property = property;
+    this.number = number;
+    this.type = type;
+    if (number > type) {
+        return 'above';
+    } else {
+        return 'below';
+    }
+};
 
 /*
     Invoke the `filterByProperty` function passing
@@ -159,3 +229,5 @@
 */
 
 //CODE HERE
+
+console.log(filterByProperty('Price', 3, 5));

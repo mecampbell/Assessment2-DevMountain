@@ -35,8 +35,9 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
 
+console.log(summedPrice);
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -55,7 +56,14 @@ const cart = [
 
 //CODE HERE
 
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    this.cartTotal = cartTotal;
+    this.couponValue = couponValue;
+    this.tax = tax;
+    return (cartTotal + (cartTotal * tax)) - couponValue;
+}
 
+console.log(calcFinalPrice(100, 1, .06));
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,6 +87,8 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    A restaurant will work a bit differently from a grocery store.
+    Our grocery store customer object will include first name, last name, order number, and phone number.  
 
 */
 
@@ -88,3 +98,12 @@ const cart = [
 */
 
 //CODE HERE
+
+const customer = {
+    firstName: 'Jimmy',
+    lastName: 'Johns',
+    orderNumber: 69420,
+    phoneNumber: 8675309
+};
+
+console.log(customer);
